@@ -6,8 +6,8 @@ import (
 	"strings"
 )
 
-//CheckInput validates the input before sending to place()
-func CheckInput(board [3][3]string, round int) [3][3]string {
+//Input validates the input before sending to place()
+func Input(board Board, round int) Board {
 	fmt.Printf("Player %d's turn\n", (round+1)%2+1)
 	render(board)
 	for {
@@ -36,7 +36,7 @@ func CheckInput(board [3][3]string, round int) [3][3]string {
 }
 
 // place marks the player's chosen position on the board
-func place(board [3][3]string, input string) ([3][3]string, error) {
+func place(board Board, input string) (Board, error) {
 	var err error
 	if strings.Contains("ABC", strings.ToUpper(string(input[0]))) && strings.Contains("123", string(input[1])) {
 		x := int(input[0]) - 97

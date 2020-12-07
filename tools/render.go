@@ -15,7 +15,7 @@ func clearScreen() {
 }
 
 // render draws out the board
-func render(board [3][3]string) {
+func render(board Board) {
 	fmt.Println("  A B C")
 	for i := 0; i < 3; i++ {
 		fmt.Printf("%d", i+1)

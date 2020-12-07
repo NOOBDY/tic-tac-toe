@@ -5,6 +5,9 @@ import (
 	"os/exec"
 )
 
+// Board defines the shape of a simple tic-tac-toe board
+type Board [3][3]string
+
 var clear map[string]func() // create a map for storing clear funcs
 
 func init() {
@@ -22,8 +25,8 @@ func init() {
 }
 
 //InitBoard initializes the board, also calls render() for one time
-func InitBoard() [3][3]string {
-	var board [3][3]string
+func InitBoard() Board {
+	var board Board
 
 	for i := 0; i < 3; i++ {
 		for j := 0; j < 3; j++ {
