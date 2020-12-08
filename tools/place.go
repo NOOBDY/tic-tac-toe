@@ -15,8 +15,8 @@ func Input(board Board, round int) Board {
 		var input string
 
 		fmt.Print("Enter Position: ")
-
 		fmt.Scanln(&input)
+
 		if round%2 == 1 {
 			input += "o"
 		} else {
