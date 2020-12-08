@@ -21,7 +21,7 @@ func render(board Board) {
 		fmt.Printf("%d", i+1)
 
 		for j := 0; j < 3; j++ {
-			fmt.Printf(" %s", board[i][j])
+			fmt.Printf(" %s", board[i][j].String())
 		}
 
 		fmt.Print("\n")

@@ -4,5 +4,9 @@ package tools
 func Check(board Board) bool {
 	var hasEnded bool
 
+	if board[1][1] == 0 {
+
+	}
+
 	return hasEnded
 }
