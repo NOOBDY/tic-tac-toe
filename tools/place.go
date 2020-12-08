@@ -13,17 +13,11 @@ func Input(board Board, round int) Board {
 	for {
 		var err error
 		var input string
-		var player state
 
 		fmt.Print("Enter Position: ")
 		fmt.Scanln(&input)
 
-		if round%2 == 1 {
-			player = o
-		} else {
-			player = x
-		}
-
+		player := state(round % 2)
 		board, err = place(board, input, player)
 
 		if err == nil {
