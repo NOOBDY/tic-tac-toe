@@ -16,9 +16,9 @@ func clearScreen() {
 
 // render draws out the board
 func render(board Board) {
-	fmt.Println("  A B C")
+	fmt.Println("  1 2 3")
 	for i := 0; i < 3; i++ {
-		fmt.Printf("%d", i+1)
+		fmt.Printf("%c", rune(i+65))
 
 		for j := 0; j < 3; j++ {
 			fmt.Printf(" %s", board[i][j].String())

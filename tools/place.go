@@ -8,8 +8,10 @@ import (
 
 //Input validates the input before sending to place()
 func Input(board Board, round int) Board {
-	fmt.Printf("Player %d's turn\n", (round+1)%2+1)
+	player := state((round+1)%2 + 1)
+	fmt.Printf("Player %d's turn\n", player)
 	render(board)
+
 	for {
 		var err error
 		var input string
@@ -17,7 +19,6 @@ func Input(board Board, round int) Board {
 		fmt.Print("Enter Position: ")
 		fmt.Scanln(&input)
 
-		player := state(round % 2)
 		board, err = place(board, input, player)
 
 		if err == nil {
@@ -37,8 +38,8 @@ func place(board Board, input string, player state) (Board, error) {
 		x := int(input[0]) - 97
 		y := int(input[1]) - 49
 
-		if board[y][x] == empty {
-			board[y][x] = player
+		if board[x][y] == empty {
+			board[x][y] = player
 		} else {
 			err = errors.New("Position Already Taken")
 		}
