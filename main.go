@@ -28,11 +28,11 @@ func main() {
 			}
 		}
 
+		hasEnded = tools.Check(board, x, y)
 		tools.ClearScreen()
 
-		hasEnded = tools.Check(board, x, y)
-
 		if hasEnded {
+			tools.Render(board)
 			fmt.Printf("Player %d has won", (round+1)%2+1)
 			break
 		}
@@ -40,6 +40,4 @@ func main() {
 	if !hasEnded {
 		fmt.Printf("Tie")
 	}
-
-	fmt.Scanln()
 }
