@@ -6,17 +6,17 @@ import (
 )
 
 // Board defines the shape of a simple tic-tac-toe board
-type Board [3][3]state
+type Board [3][3]State
 
-type state int
+type State int
 
 const (
-	empty state = iota
+	empty State = iota
 	o
 	x
 )
 
-func (s state) String() string {
+func (s State) String() string {
 	return [...]string{".", "o", "x"}[s]
 }
 
@@ -39,7 +39,7 @@ func init() {
 //InitBoard initializes the board, also calls render() for one time
 func InitBoard() Board {
 	var board Board
-	clearScreen()
+	ClearScreen()
 
 	for i := 0; i < 3; i++ {
 		for j := 0; j < 3; j++ {
