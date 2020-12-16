@@ -3,7 +3,7 @@ package tools
 import "errors"
 
 // Place marks the player's chosen position on the board
-func Place(board Board, player State, x, y int) (Board, error) {
+func Place(board *Board, player State, x, y int) error {
 	var err error
 
 	if board[x][y] == empty {
@@ -12,5 +12,5 @@ func Place(board Board, player State, x, y int) (Board, error) {
 		err = errors.New("Position Already Taken")
 	}
 
-	return board, err
+	return err
 }

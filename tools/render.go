@@ -5,6 +5,7 @@ import (
 	"runtime"
 )
 
+// ClearScreen clears the screen using commands depending on the system
 func ClearScreen() {
 	value, ok := clear[runtime.GOOS] // runtime.GOOS -> linux, windows, darwin etc.
 	if ok {                          // if we defined a clear func for that platform:
@@ -15,7 +16,7 @@ func ClearScreen() {
 }
 
 // Render draws out the board
-func Render(board Board) {
+func Render(board *Board) {
 	fmt.Println("  1 2 3")
 	for i := 0; i < 3; i++ {
 		fmt.Printf("%c", rune(i+65))

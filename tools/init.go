@@ -8,6 +8,7 @@ import (
 // Board defines the shape of a simple tic-tac-toe board
 type Board [3][3]State
 
+// State defines the current state of the box
 type State int
 
 const (
@@ -37,7 +38,7 @@ func init() {
 }
 
 //InitBoard initializes the board, also calls render() for one time
-func InitBoard() Board {
+func InitBoard() *Board {
 	var board Board
 	ClearScreen()
 
@@ -47,5 +48,5 @@ func InitBoard() Board {
 		}
 	}
 
-	return board
+	return &board
 }

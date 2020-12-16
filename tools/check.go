@@ -2,7 +2,7 @@ package tools
 
 // Check checks if any of the players have won yet
 // This function only checks for the currently placed position
-func Check(board Board, x, y int) bool {
+func Check(board *Board, x, y int) bool {
 	var hasEnded bool
 
 	player := board[x][y]

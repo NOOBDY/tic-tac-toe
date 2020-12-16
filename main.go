@@ -19,7 +19,7 @@ func main() {
 		for {
 			var err error
 			x, y = tools.Input()
-			board, err = tools.Place(board, player, x, y)
+			err = tools.Place(board, player, x, y)
 
 			if err == nil {
 				break
