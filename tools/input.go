@@ -14,11 +14,11 @@ func Input() (int, int) {
 		var input string
 
 		fmt.Print("Enter Position: ")
-		scanner := bufio.NewScanner(os.Stdin)
+		scanner := bufio.NewScanner(os.Stdin) // using *bufio.Scanner because fmt.Scan() does not accept empty inputs
 		if scanner.Scan() {
 			input = scanner.Text()
 		}
-		if input == "" || !(strings.Contains("ABC", strings.ToUpper(string(input[0]))) && strings.Contains("123", string(input[1]))) {
+		if len(input) != 2 || !(strings.Contains("ABC", strings.ToUpper(string(input[0]))) && strings.Contains("123", string(input[1]))) {
 			fmt.Println("Invalid Input")
 		} else {
 			x = int(input[0]) - 97
